@@ -13,7 +13,7 @@ jobs:
       # 获取源码
       - name: 迁出代码
       - run: echo "🍏 This job's status is ${{ secrets.SSH_PRIVATE_KEY }}."
-      - run: echo "🍏 This job's status is ${{ secrets.REMOTE_HOST }}."
+        # - run: echo "🍏 This job's status is ${{ secrets.REMOTE_HOST }}."
         # 使用action库  actions/checkout获取源码
         #   uses: actions/checkout@main
 
