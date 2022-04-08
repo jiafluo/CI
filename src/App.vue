@@ -1,8 +1,7 @@
 <template>
   <div>
     <img alt="Vue logo" src="./assets/logo.png" />
-    44
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App + Baota" />
   </div>
 </template>
 
