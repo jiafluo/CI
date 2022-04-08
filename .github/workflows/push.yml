@@ -1,4 +1,4 @@
-name: 打包应用并上传腾讯云
+name: CI/CD
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
         # 使用action库  actions/checkout获取源码
         uses: actions/checkout@master
 
-      # 安装Node10
+      # 安装Node14
       - name: 安装node.js
         # 使用action库  actions/setup-node安装node
         uses: actions/setup-node@v1
@@ -30,8 +30,8 @@ jobs:
       - name: 打包
         run: npm run build
 
-      # 上传阿里云
-      - name: 发布dev
+      # 上传服务器
+      - name: 发布
         uses: easingthemes/ssh-deploy@v2.1.1
         env:
           # 私钥
@@ -40,7 +40,7 @@ jobs:
           ARGS: "-avzr --delete"
           # 源目录
           SOURCE: "dist"
-          # 服务器ip：换成你的服务器IP
+          # 服务器ip
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           # 用户
           REMOTE_USER: "root"
